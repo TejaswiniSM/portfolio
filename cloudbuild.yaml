@@ -1,0 +1,11 @@
+steps:
+  # Copy HTML/CSS files to the instance
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args:
+      - 'compute'
+      - 'scp'
+      - '--recurse'
+      - 'build/'
+      - 'instance-group-1-k9gk:/var/www/html/'
+      - '--zone'
+      - 'southamerica-east1-b'
